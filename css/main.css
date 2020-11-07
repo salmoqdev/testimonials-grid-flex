@@ -242,6 +242,10 @@ img {
     body {
         font-size: .7rem;
     }
+    
+    .container {
+        width: 70%;
+    }
 
     .profile-img {
         width: 30%;
