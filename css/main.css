@@ -1,0 +1,297 @@
+:root {
+    --clr-Moderate-violet: hsl(263, 55%, 52%);
+    --clr-Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --clr-Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Light-gray: hsl(0, 0%, 81%);
+    --clr-Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: .8125rem;
+    line-height: 1.6;
+}
+
+body {
+    background: var(--clr-Light-grayish-blue);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cards-grid {
+    margin: 5em 0;
+}
+
+.inner-container {
+    padding: 2em;
+}
+
+.profile {
+    display: flex;
+}
+
+.profile .profile-name {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: 1em;
+    line-height: 1.5em;
+    font-size: clamp(.8rem, 2.5vw, 1rem);
+    padding: .3em 0 0 0;
+}
+
+.profile-img {
+    border-radius: 50%;
+}
+
+/* Only add colored border to card1 and 4 */
+.card1 .profile-img,
+.card4 .profile-img {
+    border: 3px solid  rgba(162, 125, 221, 0.8);
+}
+
+/* coloring cards headings and customer name for card1,2 and 4*/
+.card1 .heading,
+.card2 .heading,
+.card4 .heading,
+.card1 .customer-name,
+.card2 .customer-name,
+.card4 .customer-name {
+    color: var(--clr-Light-grayish-blue);
+}
+
+/* coloring cards headings and customer name for card3 and 5*/
+.card3 .heading,
+.card5 .heading,
+.card3 .customer-name,
+.card5 .customer-name {
+    color: var(--clr-Very-dark-grayish-blue);
+}
+
+/* coloring the description (reviews) with opacity 70% for card1,2 and 4*/
+.card1 .description,
+.card2 .description,
+.card4 .description {
+    color: var(--clr-Light-grayish-blue);
+    opacity: .7;
+}
+
+/* coloring the description (reviews) with opacity 70% for card3 and 5*/
+.card3 .description,
+.card5 .description {
+    color: var(--clr-Very-dark-grayish-blue);
+    opacity: .7;
+}
+
+/* coloring the customer title with opacity 50% for card1,2 and 4*/
+.card1 .customer-title,
+.card2 .customer-title,
+.card4 .customer-title {
+    color: var(--clr-Light-grayish-blue);
+    opacity: .5;
+}
+
+/* coloring the customer title with opacity 50% for card3 and 5*/
+.card3 .customer-title,
+.card5 .customer-title {
+    color: var(--clr-Very-dark-grayish-blue);
+    opacity: .5;
+}
+
+.card1 {
+    background: var(--clr-Moderate-violet);
+    margin: 2em 0;
+    border-radius: .5em;
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 20px;
+}
+
+.card2 {
+    background: var(--clr-Very-dark-grayish-blue);
+    margin: 2em 0;
+    border-radius: .5em;
+}
+
+.card3 {
+    background: var(--clr-White);
+    margin: 2em 0;
+    border-radius: .5em;
+}
+
+.card4 {
+    background: var(--clr-Very-dark-blackish-blue);
+    margin: 2em 0;
+    border-radius: .5em;
+}
+
+.card5 {
+    background: var(--clr-White);
+    margin: 2em 0;
+    border-radius: .5em;
+}
+
+.heading {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: .7em 0;
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* For screens larger than 500px */
+@media (min-width: 31.25em) {
+
+    body {
+        font-size: .78rem;
+    }
+
+    .card1 .profile-img,
+    .card4 .profile-img {
+        width: 13%;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .card1, .card2, .card3, .card4, .card5 {
+        margin: 0 auto;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 18em);
+        /* grid-template-rows: auto auto; */
+        gap: 1em;
+    }
+
+    .card1 {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .card2 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .card3 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+/* For screens larger than 768px */
+@media (min-width: 48em){
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 18em);
+        /* grid-template-rows: auto auto; */
+        gap: 1.2em;
+    }
+
+    .card1 {
+        grid-column: 1 / span 2;
+    }
+
+    .card2 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .card3 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .card4 {
+        grid-column: 2 / span 2;
+        grid-row: 2 / 3;
+    }
+
+    .card5 {
+        grid-column: 1 / span 3;
+        grid-row: 3 / 4;
+    }
+}
+
+/* For screens larger than 880px: */
+@media (min-width: 55em) {
+
+    body {
+        font-size: .7rem;
+    }
+
+    .profile-img {
+        width: 30%;
+    }
+
+    .card1 .profile-img,
+    .card4 .profile-img {
+        width: 13%;
+    }
+
+    .card1 {
+    background-position: top right 40px;
+    }
+
+    .card1, .card2, .card3, .card4, .card5 {
+        margin: 0 auto;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 18em);
+        gap: 1.5em;
+    }
+
+    .card1 {
+        grid-column: 1 / span 2;
+    }
+
+    .card2 {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+
+    .card3 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .card4 {
+        grid-column: 2 / span 2;
+        grid-row: 2 / 3;
+    }
+
+    .card5 {
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+    }
+
+    .heading {
+        font-size: 1rem;
+        font-weight: bold;
+}
+}
