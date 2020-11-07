@@ -244,7 +244,7 @@ img {
     }
     
     .container {
-        width: 70%;
+        width: 80%;
     }
 
     .profile-img {
@@ -266,7 +266,7 @@ img {
 
     .cards-grid {
         display: grid;
-        grid-template-columns: repeat(4, 18em);
+        grid-template-columns: repeat(4, 21.4em);
         gap: 1.5em;
     }
 
